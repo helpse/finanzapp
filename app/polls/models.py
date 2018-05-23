@@ -15,9 +15,13 @@ class Transaction(models.Model):
     user = models.ForeignKey(User, db_index=True, on_delete=models.CASCADE)
     registry = models.ForeignKey(Registry, db_index=True, on_delete=models.CASCADE)
     payment = models.FloatField(default=0)
+    date = models.DateField
     accounts = models.ManyToManyField(Account)
 
 class TransactionDetail(models.Model):
     transaction = models.ForeignKey(Transaction, db_index=True, on_delete=models.CASCADE)
+
+
+
 
 
