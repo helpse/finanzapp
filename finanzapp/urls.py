@@ -1,4 +1,4 @@
-"""app URL Configuration
+"""finanzapp URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -14,15 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path
-from app.polls.views import *
+from django.urls import path
+from graphene_django.views import GraphQLView
 
 urlpatterns = [
-    # path('app.polls/', include('app.polls.urls')),
-    path('get_accounts', get_accounts),
-    path('login', login_user),
-    path('logout', logout),
-    path('register_user', register),
     path('admin/', admin.site.urls),
-    path('register_transaction', register_transaction)
+    path(r'graphql', GraphQLView.as_view(graphiql=True)),
 ]

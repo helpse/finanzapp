@@ -1,0 +1,23 @@
+# Python compiled byte code
+*.pyc
+
+# Staticfiles
+/static/
+
+# Virtualenv
+env/
+
+# editors
+.idea
+**/.tern-port
+
+local_settings.py
+
+
+# Elastic Beanstalk Files
+
+.elasticbeanstalk/*
+
+!.elasticbeanstalk/*.cfg.yml
+
+!.elasticbeanstalk/*.global.yml
